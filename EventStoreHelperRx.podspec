@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "EventStoreHelperRx"
   spec.version      = "0.0.1"
-  spec.summary      = "A short description of EventStoreHelperRx."
+  spec.summary      = "To access Reminders and Calendar data specifically iOS EventKit for Event & Calenda."
   spec.description  = "The EventStoreHelperRx is a completely customizable helper class that can be used in any iOS app."
   spec.homepage     = "https://github.com/hadanischal/EventStoreHelperRx.git"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
