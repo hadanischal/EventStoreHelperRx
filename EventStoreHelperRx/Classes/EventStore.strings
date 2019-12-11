@@ -1,0 +1,16 @@
+/* 
+  EventStore.strings
+  EventStoreHelperRx
+
+  Created by Nischal Hada on 10/12/19.
+  Copyright © 2019 Nischal Hada. All rights reserved.
+*/
+
+"ACCESS_DENIED_OR_RESTRICTED_TITLE" = "Calendar access denied or restricted";
+"ACCESS_DENIED_OR_RESTRICTED_BODY" = "Allow Calendar access to use this features";
+
+"EVENT_NOT_ADDED_TO_CALENDAR_TITLE" = "Unable to add event to Calendar";
+"EVENT_NOT_ADDED_TO_CALENDAR_BODY" = "Event already exists in Calendar";
+
+"EVENT_ALREADY_EXISTS_IN_CALENDAR_TITLE" = "Unable to add event to Calendar, Allow Calendar access";
+"EVENT_ALREADY_EXISTS_IN_CALENDAR_BODY" = "Event already exists in Calendar, Please create new event";
