@@ -12,6 +12,8 @@
 		043172A8239E354F00139EAA /* EventStoreHelperRx.h in Headers */ = {isa = PBXBuildFile; fileRef = 0431729A239E354F00139EAA /* EventStoreHelperRx.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0446C19223A09A8400507B00 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446C19023A09A8400507B00 /* EventsModel.swift */; };
 		0446C19323A09A8400507B00 /* EventsCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446C19123A09A8400507B00 /* EventsCalendarManager.swift */; };
+		0447E5CC23A32FA1009BAC51 /* Cuckoo-GeneratedMocks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0447E5CB23A32FA1009BAC51 /* Cuckoo-GeneratedMocks.sh */; };
+		046E1FFF23A442A2001A9C13 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 046E1FFE23A442A2001A9C13 /* .swiftlint.yml */; };
 		04C7EF4B239F831D001DF031 /* EKEventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7EF44239F831D001DF031 /* EKEventError.swift */; };
 		04C7EF4C239F831D001DF031 /* EventStore.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04C7EF45239F831D001DF031 /* EventStore.strings */; };
 		04C7EF4D239F831D001DF031 /* EventStoreGeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7EF46239F831D001DF031 /* EventStoreGeneratedStrings.swift */; };
@@ -40,6 +42,8 @@
 		043172A7239E354F00139EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0446C19023A09A8400507B00 /* EventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		0446C19123A09A8400507B00 /* EventsCalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCalendarManager.swift; sourceTree = "<group>"; };
+		0447E5CB23A32FA1009BAC51 /* Cuckoo-GeneratedMocks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Cuckoo-GeneratedMocks.sh"; sourceTree = "<group>"; };
+		046E1FFE23A442A2001A9C13 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		04C7EF44239F831D001DF031 /* EKEventError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKEventError.swift; sourceTree = "<group>"; };
 		04C7EF45239F831D001DF031 /* EventStore.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EventStore.strings; sourceTree = "<group>"; };
 		04C7EF46239F831D001DF031 /* EventStoreGeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStoreGeneratedStrings.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 		0431728D239E354F00139EAA = {
 			isa = PBXGroup;
 			children = (
+				0447E5CA23A32F8E009BAC51 /* BuildScripts */,
 				04317299239E354F00139EAA /* EventStoreHelperRx */,
 				043172A4239E354F00139EAA /* EventStoreHelperRxTests */,
 				04317298239E354F00139EAA /* Products */,
@@ -111,6 +116,15 @@
 				043172A7239E354F00139EAA /* Info.plist */,
 			);
 			path = EventStoreHelperRxTests;
+			sourceTree = "<group>";
+		};
+		0447E5CA23A32F8E009BAC51 /* BuildScripts */ = {
+			isa = PBXGroup;
+			children = (
+				0447E5CB23A32FA1009BAC51 /* Cuckoo-GeneratedMocks.sh */,
+				046E1FFE23A442A2001A9C13 /* .swiftlint.yml */,
+			);
+			name = BuildScripts;
 			sourceTree = "<group>";
 		};
 		04C7EF43239F831D001DF031 /* Classes */ = {
@@ -170,6 +184,7 @@
 				04317293239E354F00139EAA /* Sources */,
 				04317294239E354F00139EAA /* Frameworks */,
 				04317295239E354F00139EAA /* Resources */,
+				046E1FFD23A44228001A9C13 /* SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -189,6 +204,7 @@
 				0431729D239E354F00139EAA /* Frameworks */,
 				0431729E239E354F00139EAA /* Resources */,
 				FB3259A133E7994121A37B76 /* [CP] Embed Pods Frameworks */,
+				0447E5C523A32CF5009BAC51 /* Cuckoo Script */,
 			);
 			buildRules = (
 			);
@@ -242,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046E1FFF23A442A2001A9C13 /* .swiftlint.yml in Resources */,
 				04C7EF4C239F831D001DF031 /* EventStore.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,12 +267,50 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0447E5CC23A32FA1009BAC51 /* Cuckoo-GeneratedMocks.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0447E5C523A32CF5009BAC51 /* Cuckoo Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/EventStoreHelperRx/Classes/EKEventHelper.swift",
+			);
+			name = "Cuckoo Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n";
+		};
+		046E1FFD23A44228001A9C13 /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		1E0F08F2A014329A4F067DEC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

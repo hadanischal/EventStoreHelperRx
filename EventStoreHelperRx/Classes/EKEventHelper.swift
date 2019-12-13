@@ -38,7 +38,7 @@ public struct EKEventHelper: EKEventHelperDataSource {
                 single(.success( .denied))
             @unknown default:
                 single(.error(RxError.unknown))
-                fatalError("EKEventStore.authorizationStatus() is not available on this version of OS.")
+                assertionFailure("EKEventStore.authorizationStatus() is not available on this version of OS.")
             }
             return Disposables.create()
         }
