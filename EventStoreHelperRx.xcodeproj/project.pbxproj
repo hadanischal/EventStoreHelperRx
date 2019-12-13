@@ -10,6 +10,8 @@
 		043172A1239E354F00139EAA /* EventStoreHelperRx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04317297239E354F00139EAA /* EventStoreHelperRx.framework */; };
 		043172A6239E354F00139EAA /* EventStoreHelperRxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043172A5239E354F00139EAA /* EventStoreHelperRxTests.swift */; };
 		043172A8239E354F00139EAA /* EventStoreHelperRx.h in Headers */ = {isa = PBXBuildFile; fileRef = 0431729A239E354F00139EAA /* EventStoreHelperRx.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0446C19223A09A8400507B00 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446C19023A09A8400507B00 /* EventsModel.swift */; };
+		0446C19323A09A8400507B00 /* EventsCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446C19123A09A8400507B00 /* EventsCalendarManager.swift */; };
 		04C7EF4B239F831D001DF031 /* EKEventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7EF44239F831D001DF031 /* EKEventError.swift */; };
 		04C7EF4C239F831D001DF031 /* EventStore.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04C7EF45239F831D001DF031 /* EventStore.strings */; };
 		04C7EF4D239F831D001DF031 /* EventStoreGeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7EF46239F831D001DF031 /* EventStoreGeneratedStrings.swift */; };
@@ -36,6 +38,8 @@
 		043172A0239E354F00139EAA /* EventStoreHelperRxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventStoreHelperRxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		043172A5239E354F00139EAA /* EventStoreHelperRxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStoreHelperRxTests.swift; sourceTree = "<group>"; };
 		043172A7239E354F00139EAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0446C19023A09A8400507B00 /* EventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
+		0446C19123A09A8400507B00 /* EventsCalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCalendarManager.swift; sourceTree = "<group>"; };
 		04C7EF44239F831D001DF031 /* EKEventError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKEventError.swift; sourceTree = "<group>"; };
 		04C7EF45239F831D001DF031 /* EventStore.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EventStore.strings; sourceTree = "<group>"; };
 		04C7EF46239F831D001DF031 /* EventStoreGeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStoreGeneratedStrings.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				04C7EF46239F831D001DF031 /* EventStoreGeneratedStrings.swift */,
 				04C7EF47239F831D001DF031 /* EKEventHelper.swift */,
 				04C7EF49239F831D001DF031 /* EKEventHelperStatus.swift */,
+				0446C19123A09A8400507B00 /* EventsCalendarManager.swift */,
+				0446C19023A09A8400507B00 /* EventsModel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -321,6 +327,8 @@
 				04C7EF4D239F831D001DF031 /* EventStoreGeneratedStrings.swift in Sources */,
 				04C7EF50239F831D001DF031 /* EKEventHelperStatus.swift in Sources */,
 				04C7EF4E239F831D001DF031 /* EKEventHelper.swift in Sources */,
+				0446C19223A09A8400507B00 /* EventsModel.swift in Sources */,
+				0446C19323A09A8400507B00 /* EventsCalendarManager.swift in Sources */,
 				04C7EF4B239F831D001DF031 /* EKEventError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
