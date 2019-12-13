@@ -15,7 +15,7 @@ public struct EventsModel {
     public let location: String?
     public let notes: String?
     public let alarmMinutesBefore: Int
-    
+
     public init(title: String,
                 startDate: Date,
                 endDate: Date,

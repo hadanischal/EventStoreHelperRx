@@ -15,13 +15,13 @@ public protocol EventsCalendarManagerDataSource {
     func presentCalendarModalToAddEvent(event: EventsModel) -> Completable
 }
 
-public class EventsCalendarManager: NSObject, EventsCalendarManagerDataSource {
+public final class EventsCalendarManager: NSObject, EventsCalendarManagerDataSource {
 
     private var eventStore: EKEventStore!
     private var eventHelper: EKEventHelperDataSource!
 
     public init(withEKEventHelper eventHelper: EKEventHelperDataSource = EKEventHelper(),
-         withEventStore eventStore: EKEventStore = EKEventStore()) {
+                withEventStore eventStore: EKEventStore = EKEventStore()) {
         self.eventHelper = eventHelper
         self.eventStore = eventStore
     }
