@@ -57,7 +57,7 @@ public struct EKEventHelper: EKEventHelperDataSource {
         }
     }
 
-    // Get Calendar auth status
+    // Get Calendar Authorization status
     private func getAuthorizationStatus() -> EKAuthorizationStatus {
         return EKEventStore.authorizationStatus(for: EKEntityType.event)
     }
