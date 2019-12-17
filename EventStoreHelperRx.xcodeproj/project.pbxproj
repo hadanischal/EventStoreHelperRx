@@ -14,6 +14,12 @@
 		0446C19323A09A8400507B00 /* EventsCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446C19123A09A8400507B00 /* EventsCalendarManager.swift */; };
 		0447E5CC23A32FA1009BAC51 /* Cuckoo-GeneratedMocks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0447E5CB23A32FA1009BAC51 /* Cuckoo-GeneratedMocks.sh */; };
 		046E1FFF23A442A2001A9C13 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 046E1FFE23A442A2001A9C13 /* .swiftlint.yml */; };
+		046E200923A45162001A9C13 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E200123A45162001A9C13 /* GeneratedMocks.swift */; };
+		046E200A23A45162001A9C13 /* EventsCalendarManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E200323A45162001A9C13 /* EventsCalendarManagerTests.swift */; };
+		046E200B23A45162001A9C13 /* EKEventHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E200423A45162001A9C13 /* EKEventHelperTests.swift */; };
+		046E200C23A45162001A9C13 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E200623A45162001A9C13 /* MockError.swift */; };
+		046E200D23A45162001A9C13 /* MockEKEventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E200723A45162001A9C13 /* MockEKEventStore.swift */; };
+		046E200E23A45162001A9C13 /* MaterializedSequenceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046E200823A45162001A9C13 /* MaterializedSequenceResult.swift */; };
 		04C7EF4B239F831D001DF031 /* EKEventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7EF44239F831D001DF031 /* EKEventError.swift */; };
 		04C7EF4C239F831D001DF031 /* EventStore.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04C7EF45239F831D001DF031 /* EventStore.strings */; };
 		04C7EF4D239F831D001DF031 /* EventStoreGeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C7EF46239F831D001DF031 /* EventStoreGeneratedStrings.swift */; };
@@ -44,6 +50,12 @@
 		0446C19123A09A8400507B00 /* EventsCalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCalendarManager.swift; sourceTree = "<group>"; };
 		0447E5CB23A32FA1009BAC51 /* Cuckoo-GeneratedMocks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "Cuckoo-GeneratedMocks.sh"; sourceTree = "<group>"; };
 		046E1FFE23A442A2001A9C13 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		046E200123A45162001A9C13 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		046E200323A45162001A9C13 /* EventsCalendarManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsCalendarManagerTests.swift; path = Test/EventsCalendarManagerTests.swift; sourceTree = "<group>"; };
+		046E200423A45162001A9C13 /* EKEventHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EKEventHelperTests.swift; path = Test/EKEventHelperTests.swift; sourceTree = "<group>"; };
+		046E200623A45162001A9C13 /* MockError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		046E200723A45162001A9C13 /* MockEKEventStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEKEventStore.swift; sourceTree = "<group>"; };
+		046E200823A45162001A9C13 /* MaterializedSequenceResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterializedSequenceResult.swift; sourceTree = "<group>"; };
 		04C7EF44239F831D001DF031 /* EKEventError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EKEventError.swift; sourceTree = "<group>"; };
 		04C7EF45239F831D001DF031 /* EventStore.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = EventStore.strings; sourceTree = "<group>"; };
 		04C7EF46239F831D001DF031 /* EventStoreGeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStoreGeneratedStrings.swift; sourceTree = "<group>"; };
@@ -112,6 +124,10 @@
 		043172A4239E354F00139EAA /* EventStoreHelperRxTests */ = {
 			isa = PBXGroup;
 			children = (
+				046E200523A45162001A9C13 /* EventKitManagerUtility */,
+				046E200123A45162001A9C13 /* GeneratedMocks.swift */,
+				046E200323A45162001A9C13 /* EventsCalendarManagerTests.swift */,
+				046E200423A45162001A9C13 /* EKEventHelperTests.swift */,
 				043172A5239E354F00139EAA /* EventStoreHelperRxTests.swift */,
 				043172A7239E354F00139EAA /* Info.plist */,
 			);
@@ -125,6 +141,16 @@
 				046E1FFE23A442A2001A9C13 /* .swiftlint.yml */,
 			);
 			name = BuildScripts;
+			sourceTree = "<group>";
+		};
+		046E200523A45162001A9C13 /* EventKitManagerUtility */ = {
+			isa = PBXGroup;
+			children = (
+				046E200623A45162001A9C13 /* MockError.swift */,
+				046E200723A45162001A9C13 /* MockEKEventStore.swift */,
+				046E200823A45162001A9C13 /* MaterializedSequenceResult.swift */,
+			);
+			path = EventKitManagerUtility;
 			sourceTree = "<group>";
 		};
 		04C7EF43239F831D001DF031 /* Classes */ = {
@@ -392,7 +418,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046E200D23A45162001A9C13 /* MockEKEventStore.swift in Sources */,
+				046E200B23A45162001A9C13 /* EKEventHelperTests.swift in Sources */,
+				046E200C23A45162001A9C13 /* MockError.swift in Sources */,
 				043172A6239E354F00139EAA /* EventStoreHelperRxTests.swift in Sources */,
+				046E200923A45162001A9C13 /* GeneratedMocks.swift in Sources */,
+				046E200E23A45162001A9C13 /* MaterializedSequenceResult.swift in Sources */,
+				046E200A23A45162001A9C13 /* EventsCalendarManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
