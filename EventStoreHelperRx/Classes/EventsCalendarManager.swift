@@ -10,9 +10,15 @@ import UIKit
 import EventKitUI
 import RxSwift
 
+public enum EventsCalendarStatus: Equatable {
+    case added
+    case denied
+    case error(EKEventError)
+}
+
 public protocol EventsCalendarManagerDataSource {
-    func addEventToCalendar(event: EventsModel) -> Completable
-    func presentCalendarModalToAddEvent(event: EventsModel) -> Completable
+    func addEventToCalendar(event: EventsModel) -> Single<EventsCalendarStatus>
+    func presentCalendarModalToAddEvent(event: EventsModel) -> Single<EventsCalendarStatus>
 }
 
 public final class EventsCalendarManager: NSObject, EventsCalendarManagerDataSource {
@@ -28,11 +34,10 @@ public final class EventsCalendarManager: NSObject, EventsCalendarManagerDataSou
 
     // Check Calendar permissions auth status
     // Try to add an event to the calendar if authorized
-
-    public func addEventToCalendar(event: EventsModel) -> Completable {
+    public func addEventToCalendar(event: EventsModel) -> Single<EventsCalendarStatus> {
         return self.eventHelper
             .authorizationStatus
-            .flatMapCompletable { authStatus -> Completable in
+            .flatMap { authStatus -> Single<EventsCalendarStatus> in
                 switch authStatus {
                 case .authorized:
                     return self.addEvent(event: event)
@@ -41,39 +46,38 @@ public final class EventsCalendarManager: NSObject, EventsCalendarManagerDataSou
                     //We should request access to the calendar
                     return self.eventHelper
                         .requestAccess
-                        .flatMapCompletable { status -> Completable in
+                        .flatMap { status -> Single<EventsCalendarStatus> in
                             if status {
                                 return self.addEvent(event: event)
                             }
-                            return Completable.error(EKEventError.calendarAccessDeniedOrRestricted)
+                            return Single.just(EventsCalendarStatus.denied)
                     }
                 case .denied, .restricted:
-                    return Completable.error(EKEventError.calendarAccessDeniedOrRestricted)
+                    return Single.just(EventsCalendarStatus.denied)
                 }
         }
     }
 
     // Try to save an event to the calendar
-    private func addEvent(event: EventsModel) -> Completable {
-        return Completable.create { completable in
+    private func addEvent(event: EventsModel) -> Single<EventsCalendarStatus> {
+        return Single<EventsCalendarStatus>.create { single in
             let eventToAdd = self.generateEvent(event: event)
             if !self.eventAlreadyExists(event: eventToAdd) {
                 do {
                     try self.eventStore.save(eventToAdd, span: .thisEvent)
                 } catch {
                     // Error while trying to create event in calendar
-                    completable(.error(EKEventError.eventNotAddedToCalendar))
+                    single(.error(EKEventError.eventNotAddedToCalendar))
                 }
-                completable(.completed)
+                single(.success(.added))
             } else {
-                completable(.error(EKEventError.eventAlreadyExistsInCalendar))
+                single(.error(EKEventError.eventAlreadyExistsInCalendar))
             }
             return Disposables.create {}
         }
     }
 
     // Generate an event which will be then added to the calendar
-
     private func generateEvent(event: EventsModel) -> EKEvent {
         let newEvent = EKEvent(eventStore: eventStore)
         newEvent.calendar = eventStore.defaultCalendarForNewEvents
@@ -88,7 +92,6 @@ public final class EventsCalendarManager: NSObject, EventsCalendarManagerDataSou
     }
 
     // Check if the event was already added to the calendar
-
     private func eventAlreadyExists(event eventToAdd: EKEvent) -> Bool {
         let predicate = eventStore.predicateForEvents(withStart: eventToAdd.startDate, end: eventToAdd.endDate, calendars: nil)
         let existingEvents = eventStore.events(matching: predicate)
@@ -99,52 +102,49 @@ public final class EventsCalendarManager: NSObject, EventsCalendarManagerDataSou
         return eventAlreadyExists
     }
 
-    // Show event kit ui to add event to calendar
-
-    public func presentCalendarModalToAddEvent(event: EventsModel) -> Completable {
+    // Show EventKit to add event to calendar
+    public func presentCalendarModalToAddEvent(event: EventsModel) -> Single<EventsCalendarStatus> {
         return self.eventHelper
             .authorizationStatus
-            .flatMapCompletable { authStatus -> Completable in
+            .flatMap { authStatus -> Single<EventsCalendarStatus> in
                 switch authStatus {
                 case .authorized:
-                   return self.presentEventCalendarDetailModal(event: event)
+                    return self.presentEventCalendarDetailModal(event: event)
                 case .notDetermined:
-                    //Auth is not determined
+                    //AuthorizationStatus is not determined
                     //We should request access to the calendar
                     return self.eventHelper
                         .requestAccess
                         .observeOn(MainScheduler.instance)
-                        .flatMapCompletable { status -> Completable in
+                        .flatMap { status -> Single<EventsCalendarStatus>  in
                             if status {
-                               return self.presentEventCalendarDetailModal(event: event)
+                                return self.presentEventCalendarDetailModal(event: event)
                             }
-                            return Completable.error(EKEventError.calendarAccessDeniedOrRestricted)
+                            return Single.just(EventsCalendarStatus.denied)
                     }
                 case .denied, .restricted:
-                    return Completable.error(EKEventError.calendarAccessDeniedOrRestricted)
+                    return Single.just(EventsCalendarStatus.denied)
                 }
         }
     }
 
     // Present edit event calendar modal
-    private func presentEventCalendarDetailModal(event: EventsModel) -> Completable {
-
-        return Completable.create { completable in
+    private func presentEventCalendarDetailModal(event: EventsModel) -> Single<EventsCalendarStatus> {
+        return Single<EventsCalendarStatus>.create { single in
             let event = self.generateEvent(event: event)
             let eventModalVC = EKEventEditViewController()
             eventModalVC.event = event
             eventModalVC.eventStore = self.eventStore
             eventModalVC.editViewDelegate = self
             guard let rootVC = UIApplication.shared.keyWindow?.rootViewController else {
-                completable(.error(EKEventError.eventNotAddedToCalendar))
+                single(.error(EKEventError.eventNotAddedToCalendar))
                 return Disposables.create {}
             }
             rootVC.present(eventModalVC, animated: true, completion: nil)
-            completable(.completed)
+            single(.success(.added))
             return Disposables.create {}
         }
     }
-
 }
 
 // EKEventEditViewDelegate
