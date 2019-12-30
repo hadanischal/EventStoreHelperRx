@@ -17,7 +17,7 @@ internal enum L10n {
   internal static let accessDeniedOrRestrictedTitle = L10n.tr("EventStore", "ACCESS_DENIED_OR_RESTRICTED_TITLE")
   /// Event already exists in Calendar, Please create new event
   internal static let eventAlreadyExistsInCalendarBody = L10n.tr("EventStore", "EVENT_ALREADY_EXISTS_IN_CALENDAR_BODY")
-  /// Unable to add event to Calendar, Allow Calendar access
+  /// Unable to add event to Calendar
   internal static let eventAlreadyExistsInCalendarTitle = L10n.tr("EventStore", "EVENT_ALREADY_EXISTS_IN_CALENDAR_TITLE")
   /// Event already exists in Calendar
   internal static let eventNotAddedToCalendarBody = L10n.tr("EventStore", "EVENT_NOT_ADDED_TO_CALENDAR_BODY")
