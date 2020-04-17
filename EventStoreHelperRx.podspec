@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "EventStoreHelperRx"
-  spec.version      = "0.3.0"
+  spec.version      = "0.4.0"
   spec.summary      = "To access Reminders and Calendar data specifically iOS EventKit for Event & Calenda."
   spec.description  = "The EventStoreHelperRx is a completely customizable helper class that can be used in any iOS app."
   spec.homepage     = "https://github.com/hadanischal/EventStoreHelperRx.git"
@@ -132,7 +132,7 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
-  spec.dependency 'RxSwift', '~> 5.0.1'
-  spec.dependency 'RxCocoa', '~> 5.0.1'
+  spec.dependency 'RxSwift', '~> 5.1.1'
+  spec.dependency 'RxCocoa', '~> 5.1.1'
 
 end
